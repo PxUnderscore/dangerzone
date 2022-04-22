@@ -356,12 +356,12 @@ class DangerzoneConverter:
                         args,
                         stdout=subprocess.DEVNULL,
                         stderr=subprocess.DEVNULL,
-                        timeout=60,
+                        timeout=120,
                     )
                 except subprocess.TimeoutExpired:
                     self.output(
                         True,
-                        "Error converting pixels to PNG, convert timed out after 60 seconds",
+                        "Error converting pixels to PNG, convert timed out after 120 seconds",
                         percentage,
                     )
                     return 1
@@ -388,12 +388,12 @@ class DangerzoneConverter:
                         args,
                         stdout=subprocess.DEVNULL,
                         stderr=subprocess.DEVNULL,
-                        timeout=60,
+                        timeout=120,
                     )
                 except subprocess.TimeoutExpired:
                     self.output(
                         True,
-                        "Error converting PNG to searchable PDF, tesseract timed out after 60 seconds",
+                        "Error converting PNG to searchable PDF, tesseract timed out after 120 seconds",
                         percentage,
                     )
                     return 1
@@ -428,12 +428,12 @@ class DangerzoneConverter:
                         args,
                         stdout=subprocess.DEVNULL,
                         stderr=subprocess.DEVNULL,
-                        timeout=60,
+                        timeout=120,
                     )
                 except subprocess.TimeoutExpired:
                     self.output(
                         True,
-                        "Error converting RGB to PDF, convert timed out after 60 seconds",
+                        "Error converting RGB to PDF, convert timed out after 120 seconds",
                         percentage,
                     )
                     return 1
@@ -459,12 +459,12 @@ class DangerzoneConverter:
         args.append(f"/tmp/safe-output.pdf")
         try:
             p = subprocess.run(
-                args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=60
+                args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120
             )
         except subprocess.TimeoutExpired:
             self.output(
                 True,
-                "Error merging pages into a single PDF, pdfunite timed out after 60 seconds",
+                "Error merging pages into a single PDF, pdfunite timed out after 120 seconds",
                 percentage,
             )
             return 1
